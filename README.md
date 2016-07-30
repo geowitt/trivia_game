@@ -1,2 +1,2 @@
-# trivia_game
-Week 5 Homework
+# triviaGame
+Trivia game made using timers. 
