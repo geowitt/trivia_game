@@ -8,6 +8,8 @@ body {
 .header{
 	background-color: grey;
 	color:white;
+	border: solid;
+	border-width: 5px;
 	margin-left: 35%;
 	display: inline-block;
 	margin-top: 50px;
@@ -24,6 +26,9 @@ body {
 .questions{
 	background-color: #FFF8DC;
 	display: block;
+	border: solid;
+	border-width: 5px;
+	border-color: grey;
 	margin: auto;
 	padding:50px;
 	width:40%;
@@ -32,6 +37,10 @@ body {
 .info{
 	background-color: white;
 	margin-left:35%;
+	border: solid;
+	border-width: 5px;
+	border-style: thin;
+	border-color: grey;
 	display: inline-block;
 	padding:100px;
 	width:30%;
@@ -45,7 +54,7 @@ body {
 .btn {
 	background-color: grey;
 	border: solid;
-	border-width: 10px;
+	border-width: 5px;
 	padding: 20px;
 	font-size: 40px;
 }
@@ -55,7 +64,7 @@ body {
 	margin: auto;
 	width: 100%;
 	border: solid;
-	border-width: 10px;
+	border-width: 5px;
 	padding: 40px;
 	font-size: 30px;
 }

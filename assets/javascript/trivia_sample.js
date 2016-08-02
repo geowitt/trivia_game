@@ -17,6 +17,38 @@ $(document).ready(function(){
 	var r = 0;
 	var guess;
 
+
+	var gameObj = {
+		streetFighter: {
+			questions: [
+				{
+					question: 'yadadya',
+					right: 'sagat',
+					choices: ['a', 'b', 'c']
+				}
+			]
+		},
+
+		Pokemon: {
+			right: new Audio('')
+			questions: [
+				{
+					question: 'yadadya',
+					right: 'sagat',
+					choices: ['a', 'b', 'c']
+				}
+			]
+		}
+	};
+
+	var games = Object.keys(gameObj);
+
+	var questions = someFunctionThatReturnsMyQuestions();
+
+	delete gameObj.Pokemen;
+
+	var currentGame = getCurrentGameFrom(gameObj);
+
 	//Questions with choices and answer
 	var questions = [
 
@@ -61,8 +93,6 @@ $(document).ready(function(){
 			choices:['Resident Evil', 'Final Fight', 'Saturday Night Slam Masters', 'Power Stone'],
 		},
 	]
-
-	// timer code start
 	 var clock = {
 		time: 30,
 		int1:0,
@@ -71,26 +101,18 @@ $(document).ready(function(){
 			clock.time = 30; 
 			$('#timerem').html("Time remaining: " + clock.time);
 		},
-
-		// Count down
 		count: function() {
 			clock.time--;
 			$('#timerem').html("Time remaining: " + clock.time);
 		},
-
-		// Time start
 		start:function() {
 			int1 = setInterval(clock.count, 1000);
 			int2 = setTimeout(clock.out, 30000);
 		},
-
-		// Time stop 
 		stop: function (){
 			clearInterval(int1);
 			clearTimeout(int2);
 		},
-
-		// Time out function
 		out: function() {
 			clock.stop();
 			$('.info').show();
@@ -105,7 +127,7 @@ $(document).ready(function(){
 
 	}
 
-	// Question code begin 
+
 	function setQuestion () {
 		$('#restart').hide();
 		if(r < questions.length){
@@ -155,11 +177,8 @@ $(document).ready(function(){
 			$('.questions').hide();;
 			clock.stop();
 			setTimeout(setQuestion, 3000);
-
-			// Audio for correct question
 			var right = new Audio("assets/audio/win.mp3");
 			right.play();
-
 			correct++;
 		}  else {
 			$('.info').show();
